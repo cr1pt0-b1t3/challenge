@@ -1,0 +1,132 @@
+<html lang="it">
+<head>
+    <title>GiftList</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: "Tilt Neon", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.3rem;
+        }
+
+        .box {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: saddlebrown;
+            box-shadow: orange 10px 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .box h5 {
+            background-color: white;
+            color: orange;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .box input {
+            font-size: 2rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px black;
+            margin-bottom: 1rem;
+        }
+
+        .box textarea {
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px black;
+            width: 80%;
+            min-height: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .box button {
+            font-size: 2rem;
+            border: none;
+            background-color: lightgray;
+            border-radius: 5px;
+            box-shadow: 2px 2px orange;
+        }
+
+        .box button:hover {
+            transition: all 200ms;
+            background-color: darkgray;
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body style="padding: 1rem">
+
+<div style="text-align: center; padding: 0 5rem 0 5rem">
+    <h1>Benvenuti su GiftList</h1>
+
+    <h4>GiftList è il tuo compagno digitale per creare liste di regali personalizzate in modo semplice e
+        divertente! Che tu stia pianificando una lista dei desideri per il tuo compleanno, organizzando regali per le
+        festività o semplicemente cercando idee per sorprendere i tuoi cari, siamo qui per aiutarti a fare di ogni
+        occasione un'esperienza memorabile.</h4>
+</div>
+
+<div class="box">
+    <h4>Inserisci il tuo nome per visualizzare la tua lista:</h4>
+    <div>
+        <input type="text" id="userGet">
+    </div>
+    <div>
+        <button onclick="get(window.userGet.value)">Get list</button>
+    </div>
+    <ul id="presents">
+    </ul>
+</div>
+
+<div class="box">
+    <h4>Inserisci il tuo nome e il regalo per aggiungerlo alla lista:</h4>
+    <div>
+        <input type="text" id="userAdd">
+    </div>
+    <div>
+        <input type="text" id="info">
+    </div>
+    <div>
+        <button onclick="add()">Add to list</button>
+    </div>
+</div>
+
+<script>
+    function get(user) {
+        fetch(`/get?user=${encodeURIComponent(user)}`).then(x => x.json()).then(x => {
+            window.presents.innerHTML = ''
+
+            if (x.error) {
+                alert(`There was an error: ${x.error}`)
+            } else {
+                for (const present of x.presents) {
+                    const item = document.createElement('li')
+                    item.innerText = present
+                    window.presents.appendChild(item)
+                }
+            }
+        }).catch(console.error)
+    }
+
+    function add() {
+        fetch(`/add?user=${encodeURIComponent(window.userAdd.value)}&info=${encodeURIComponent(window.info.value)}`).then(x => x.json()).then(x => {
+            if (x.error) {
+                alert(`There was an error: ${x.error}`)
+                return
+            }
+
+            window.info.value = '';
+            get(window.userAdd.value)
+        }).catch(console.error)
+    }
+</script>
+</body>
+</html>

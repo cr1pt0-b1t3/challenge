@@ -1,0 +1,1 @@
+Riproduci la sequenza di richieste catturata nel pcap.

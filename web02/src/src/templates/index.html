@@ -1,0 +1,67 @@
+<html lang="it">
+<head>
+    <title>Sito Gentile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: "Tilt Neon", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.3rem;
+        }
+
+        .box {
+            list-style-type: none;
+            background: red;
+            border-radius: 1rem;
+            box-shadow: #0a53be 10px 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .box button {
+            cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
+
+            width: 60%;
+            aspect-ratio: 5/2;
+
+            background: white;
+            border: none;
+            border-radius: .3rem;
+            box-shadow: #0c0c0c 3px 3px;
+
+            font-size: 3rem;
+
+            transition: all 2s;
+        }
+
+        .box button:hover {
+            background: lightgray;
+            transform: rotate(1080deg);
+        }
+    </style>
+</head>
+<body style="padding: 1rem">
+
+<div style="text-align: center; padding: 0 5rem 0 5rem">
+    <h1>Benvenuti su Sito Gentile!</h1>
+
+    <h4>Il luogo online dove la gentilezza è al centro di tutto. Qui troverai un rifugio digitale, un'oasi di calma e
+        positività in un mondo spesso frenetico. Esplora contenuti che ispirano gentilezza, condividi storie di
+        altruismo e scopri modi per diffondere amore e compassione nella tua vita quotidiana. Entra a far parte di una
+        comunità che crede nel potere trasformativo della gentilezza e insieme rendiamo il mondo un posto migliore, un
+        gesto gentile alla volta.</h4>
+</div>
+
+<div class="box">
+    <h3><u>Comincia subito con il nostro percorso di gentilezza:</u></h3>
+    <button onclick="fetch('/talk', {method: 'GET'}).then(x => x.text()).then(x => alert(x)).catch(console.error);">
+        Ricevi un pensiero gratuito
+    </button>
+</div>
+</body>
+</html>

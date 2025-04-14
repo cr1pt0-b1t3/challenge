@@ -1,0 +1,1 @@
+C'è qualcosa che non va con la query SQL, mai sentito parlare di SQL injection?

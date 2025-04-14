@@ -1,0 +1,30 @@
+{
+  "title": "DNS data heist",
+  "description": "Sappiamo che sono stati esfiltrati dei dati, questo \u00e8 tutto quello che abbiamo potuto catturare. C'\u00e8 qualcosa che non quadra in tutte quelle query DNS...",
+  "authors": [
+    "Giulia Martino <@Giulia>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 26,
+  "flags": [
+    "^ITASEC\\{we_tried_dns_exfiltration_but_you_caught_us_grr\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "traffic.pcap",
+      "type": "upload",
+      "path": "./attachments/traffic.pcap",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

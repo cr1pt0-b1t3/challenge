@@ -1,0 +1,8 @@
+services:
+  web02:
+    build: .
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    environment:
+      FLAG: ITASEC{th3_1nt3rn3t_w0rk5_1n_my5t3r10us_w4ys}

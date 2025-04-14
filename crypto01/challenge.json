@@ -1,0 +1,23 @@
+{
+  "title": "Crittografia senza chiave",
+  "description": "Ho premuto un po' di tasti a caso su [CyberChef](https://gchq.github.io/CyberChef/)... Sicuramente ora il mio messaggio \u00e8 al sicuro!\n\n`73mYyG4ZNHQdu8pG5yaLLJTccg83oi5oMhag6nMePT43WQqEDst2FquXD6KiJr5xo4M1mCh3A277dFsGkdCdTzbSeU1y5rei77AW4FZixa37oNQLmmF5xjnbsgaePZG1P1bRJjb7FNXFvDDzYvZbRG4dVopFWX52o6zo35uD2MaCBtewKWKEXgoefrnGMvj9Lrdwkc9NCUgNFKBenyFXYvYPUDj1gvxY8P42DzVeC9ZsgbCBSWTukTaZPznhFTpSeUQR5g8nZdM2qvkMhZ5y2T5ALTdTP8BZ9u73xeCyjhnUNnPcgUPpdihW2xe2sEzuSxuY4inY`",
+  "authors": [
+    "Matteo Rossi <@mr96>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 31,
+  "flags": [
+    "^ITASEC\\{3ncryp710n_w17h0u7_4_k3y_15_ju57_3nc0d1n6\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": []
+}

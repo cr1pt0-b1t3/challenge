@@ -1,0 +1,1 @@
+Estrai tutti i caratteri esadecimali e salva i byte corrispondenti in un file. 

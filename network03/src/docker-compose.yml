@@ -1,0 +1,27 @@
+services:
+  client:
+    build: .
+    restart: no
+    command: [ 'python3', '/client.py', 'server', '5555', '/secrets.tar.gz' ]
+    volumes:
+      - ./client.py:/client.py:ro
+      - ./secrets.tar.gz:/secrets.tar.gz:ro
+    depends_on:
+      - server
+
+  server:
+    build: .
+    restart: no
+    command: [ 'python3', '/server.py', '5555' ]
+    volumes:
+      - ./server.py:/server.py:ro
+
+  tcpdump:
+    image: nicolaka/netshoot
+    restart: no
+    network_mode: service:client
+    command: [ 'tcpdump' ,'-i' ,'eth0' ,'-w', '/data/traffic.pcap' , 'port 5555' ]
+    volumes:
+      - ./data:/data
+    depends_on:
+      - client

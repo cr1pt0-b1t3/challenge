@@ -1,0 +1,34 @@
+services:
+  client:
+    build: .
+    restart: no
+    command: [ '/client.sh' ]
+    volumes:
+      - ./client.sh:/client.sh:ro
+      - ./client.py:/client.py:ro
+      - ./ca_cert.pem:/ca_cert.pem:ro
+      - ./logs:/logs
+    depends_on:
+      - server
+
+  server:
+    build: .
+    restart: no
+    command: [ 'python3', '/server.py', '--certificate', '/cert.pem', '--private-key', '/key.pem' ]
+    volumes:
+      - ./server.py:/server.py:ro
+      - ./demo.py:/demo.py:ro
+      - ./htdocs:/htdocs:ro
+      - ./templates:/templates:ro
+      - ./cert.pem:/cert.pem:ro
+      - ./key.pem:/key.pem:ro
+
+  tcpdump:
+    image: nicolaka/netshoot
+    restart: no
+    network_mode: service:client
+    command: [ 'tcpdump' ,'-i' ,'eth0' ,'-w', '/data/traffic.pcap']
+    volumes:
+      - ./data:/data
+    depends_on:
+      - client

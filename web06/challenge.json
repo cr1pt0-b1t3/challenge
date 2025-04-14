@@ -1,0 +1,40 @@
+{
+  "title": "GiftList",
+  "description": "Rendi la tua lista dei desideri una realt\u00e0 con GiftList.\n\nSito: [http://giftlist.challs.olicyber.it](http://giftlist.challs.olicyber.it)",
+  "authors": [
+    "Gianluca Altomani <@devgianlu>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 46,
+  "flags": [
+    "^ITASEC\\{sql_1nj3ct10n_b4by_st3p5\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "index.js",
+      "type": "upload",
+      "path": "./attachments/index.js",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://giftlist.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

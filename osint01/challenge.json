@@ -1,0 +1,32 @@
+{
+  "title": "Uno strano ricordo...",
+  "description": "L'allegato di questa challenge mi ricorda un po' troppo quello della challenge \"Uno strano incontro...\" proposta al workshop *CyberHighSchools* di ITASEC23.\n\nProbabilmente la flag sar\u00e0 rimasta la stessa dell'anno scorso...\n\nRiesci a trovare qualche traccia in rete?\n\nLa flag \u00e8 nel formato ITASEC{nome del posto}",
+  "authors": [
+    "Gaspare Ferraro <@Gaspare>"
+  ],
+  "tags": [
+    "osint"
+  ],
+  "hiddenTags": [],
+  "order": 11,
+  "flags": [
+    "^ITASEC\\{bar_del_corso\\}$",
+    "^ITASEC\\{bar del corso\\}$",
+    "^ITASEC\\{Bar del corso\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "luogo-incontro.png",
+      "type": "upload",
+      "path": "./attachments/luogo-incontro.png",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,1 @@
+Si può bypassare il controllo combinando più utenti diversi ma con nomi simili a quello richiesto?

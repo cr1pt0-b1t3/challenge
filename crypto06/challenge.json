@@ -1,0 +1,33 @@
+{
+  "title": "Condividendo segreti",
+  "description": "Lo sapevi che la crittografia pu\u00f2 essere usata per [condividere segreti](https://en.wikipedia.org/wiki/Secret_sharing)?\n\nSito: [http://condividendosegreti.challs.olicyber.it](http://condividendosegreti.challs.olicyber.it)",
+  "authors": [
+    "Matteo Rossi <@mr96>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 36,
+  "flags": [
+    "^ITASEC{n07_50_53cr37_5h4r1n6_:\\(}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://condividendosegreti.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

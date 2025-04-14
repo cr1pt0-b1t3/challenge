@@ -1,0 +1,28 @@
+services:
+  client:
+    build: .
+    restart: no
+    command: [ 'python3', '/client.py', 'server', '53' ]
+    volumes:
+      - ./client.py:/client.py:ro
+      - ./flag.mp4:/flag.mp4:ro
+    depends_on:
+      - server
+
+  server:
+    build: .
+    restart: no
+    command: [ 'dnserver', '--port', '53', '/zones.toml' ]
+    volumes:
+      - ./server.py:/server.py:ro
+      - ./zones.toml:/zones.toml:ro
+
+  tcpdump:
+    image: nicolaka/netshoot
+    restart: no
+    network_mode: service:client
+    command: [ 'tcpdump' , '-w', '/data/traffic.pcap' , 'port 53' ]
+    volumes:
+      - ./data:/data
+    depends_on:
+      - client

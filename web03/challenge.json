@@ -1,0 +1,33 @@
+{
+  "title": "SecretCheckAI",
+  "description": "Scopri il potenziale segreto di ogni frase con l'intelligenza artificiale su SecretCheckAI!\n\nSito: [http://secretcheckai.challs.olicyber.it](http://secretcheckai.challs.olicyber.it)",
+  "authors": [
+    "Gianluca Altomani <@devgianlu>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 43,
+  "flags": [
+    "^ITASEC\\{cl13nt_s1d3_v4l1d4ti0n_1s_n3v3r_th3_s0lut10n!\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://secretcheckai.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

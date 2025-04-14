@@ -1,0 +1,108 @@
+<html lang="it">
+<head>
+    <title>DividiFacile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: "Tilt Neon", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.3rem;
+        }
+
+        .box {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: saddlebrown;
+            box-shadow: orange 10px 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .box h5 {
+            background-color: white;
+            color: orange;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .box input {
+            font-size: 2rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px black;
+            margin-bottom: 1rem;
+        }
+
+        .box textarea {
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px black;
+            width: 80%;
+            min-height: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .box button {
+            font-size: 2rem;
+            border: none;
+            background-color: lightgray;
+            border-radius: 5px;
+            box-shadow: 2px 2px orange;
+        }
+
+        .box button:hover {
+            transition: all 200ms;
+            background-color: darkgray;
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body style="padding: 1rem">
+
+<div style="text-align: center; padding: 0 5rem 0 5rem">
+    <h1>Benvenuti su DividiFacile</h1>
+
+    <h4>DividiFacile è il tuo strumento online per semplificare le divisioni in modo rapido ed efficiente! Che tu stia
+        dividendo le spese di un viaggio con gli amici, calcolando la quota di ciascuno in un progetto di gruppo o
+        suddividendo le spese di una cena, siamo qui per rendere il processo di divisione un gioco da ragazzi.</h4>
+</div>
+
+<div class="box">
+    <h4>Comincia oggi ad effettuare le divisioni:</h4>
+    <div>
+        <input type="number" id="amount" min="0">
+    </div>
+    <div>
+        <input type="number" id="pieces" min="1">
+    </div>
+    <div>
+        <button onclick="divide()">Divide now</button>
+    </div>
+    <div>
+        <h4>Here is your result:</h4>
+        <h5 id="result"></h5>
+    </div>
+</div>
+<script>
+    function divide() {
+        fetch('/divide', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({amount: window.amount.value, pieces: window.pieces.value})
+        }).then(x => x.json()).then(x => {
+            if (x.error) {
+                window.result.innerText = `There was an error: ${x.error}`
+            } else {
+                window.result.innerText = x.result
+            }
+        }).catch(console.error)
+    }
+</script>
+</body>
+</html>

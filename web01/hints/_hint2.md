@@ -1,0 +1,1 @@
+A volte una stringa di testo potrebbe nascondersi perfino in un'immagine!

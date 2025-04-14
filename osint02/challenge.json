@@ -1,0 +1,23 @@
+{
+  "title": "Ritorno alle origini",
+  "description": "Quest'anno, con ITASEC24, siamo arrivati alla 8a edizione di [ITASEC](https://itasec.it), la conferenza italiana sulla cybersicurezza.\n\nRiesci a trovare esattamente quando \u00e8 stato registrato il dominio [itasec.it](https://itasec.it) la prima volta?\n\nLa flag \u00e8 nel formato: `ITASEC{AAAA-MM-GG hh:mm:ss}`",
+  "authors": [
+    "Gaspare Ferraro <@Gaspare>"
+  ],
+  "tags": [
+    "osint"
+  ],
+  "hiddenTags": [],
+  "order": 12,
+  "flags": [
+    "^ITASEC\\{2016-12-07 18:25:53\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": []
+}

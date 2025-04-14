@@ -1,0 +1,33 @@
+{
+  "title": "Sito Gentile",
+  "description": "Dove la gentilezza diventa un'abitudine quotidiana e un'ispirazione per un mondo migliore.\n\nSito: [http://sitogentile.challs.olicyber.it](http://sitogentile.challs.olicyber.it)",
+  "authors": [
+    "Gianluca Altomani <@devgianlu>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 42,
+  "flags": [
+    "^ITASEC\\{th3_1nt3rn3t_w0rk5_1n_my5t3r10us_w4ys\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://sitogentile.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

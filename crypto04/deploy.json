@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "services": {
+    "app": {
+      "build": "src",
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m flask install && /usr/bin/supervisord"
+      ],
+      "expose": [
+        {
+          "type": "http",
+          "container": 80,
+          "hostname": "xortemporale.challs.olicyber.it",
+          "secure": false
+        }
+      ]
+    }
+  }
+}

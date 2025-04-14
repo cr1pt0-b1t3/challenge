@@ -1,0 +1,111 @@
+<html lang="it">
+<head>
+    <title>QuickNote</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: "Tilt Neon", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.3rem;
+        }
+
+        .box {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: violet;
+            box-shadow: green 10px 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .box h5 {
+            background-color: white;
+            color: green;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .box input {
+            font-size: 2rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px black;
+            margin-bottom: 1rem;
+        }
+
+        .box textarea {
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px black;
+            width: 80%;
+            min-height: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .box button {
+            font-size: 2rem;
+            border: none;
+            background-color: lightgray;
+            border-radius: 5px;
+            box-shadow: 2px 2px green;
+        }
+
+        .box button:hover {
+            transition: all 200ms;
+            background-color: darkgray;
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body style="padding: 1rem">
+
+<div style="text-align: center; padding: 0 5rem 0 5rem">
+    <h1>Benvenuti su QuickNote</h1>
+
+    <h4>QuickNote è il tuo compagno digitale per prendere appunti in modo veloce e intuitivo! Che tu sia uno
+        studente che prende appunti durante una lezione, un professionista che annota idee durante una riunione o
+        semplicemente qualcuno che vuole tenere traccia di pensieri e ispirazioni, QuickNote è qui per semplificarti la
+        vita.</h4>
+</div>
+
+<div class="box" id="show-note">
+    <h3>Ecco la tua nota:</h3>
+    <h5>
+
+    </h5>
+</div>
+
+<div class="box" id="create-note">
+    <h3>Crea una nota ora:</h3>
+    <div>
+        <input type="text" id="username" placeholder="Username"/></div>
+    <div>
+        <textarea id="note"></textarea>
+    </div>
+    <div>
+        <button onclick="fetch(`/create?username=${encodeURIComponent(window.username.value)}&content=${encodeURIComponent(window.note.value)}`).then(x=>x.text()).then(x => alert(x)).then(() => location.reload()).catch(console.error)">
+            Crea nota
+        </button>
+    </div>
+</div>
+
+<script>
+    fetch('/get').then(x => x.text()).then(x => {
+        if (x.startsWith('OK: ')) {
+            document.querySelector('#show-note h5').innerText = x.slice(5)
+            document.querySelector('#show-note').style.display = 'block'
+            document.querySelector('#create-note').style.display = 'none'
+        } else {
+            document.querySelector('#show-note').style.display = 'none'
+            document.querySelector('#create-note').style.display = 'block'
+        }
+    }).catch(console.error)
+</script>
+</body>
+</html>

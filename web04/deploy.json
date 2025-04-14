@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "services": {
+    "app": {
+      "build": "src",
+      "expose": [
+        {
+          "type": "http",
+          "container": 5000,
+          "hostname": "quicknote.challs.olicyber.it",
+          "secure": false
+        }
+      ],
+      "environment": {
+        "FLAG": "ITASEC{c00ki3s_c4n_b3_ch4ng3d_f0r_big_r3w4rds}"
+      }
+    }
+  }
+}

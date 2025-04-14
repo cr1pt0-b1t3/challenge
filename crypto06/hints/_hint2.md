@@ -1,0 +1,1 @@
+Quanti bit ha la flag? E quanti bit ha il segreto che puoi recuperare con solo 5 share?

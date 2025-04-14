@@ -1,0 +1,30 @@
+{
+  "title": "Un byte alla volta",
+  "description": "Abbiamo intercettato il client mentre mandava la flag al server. Riesci a trovarla?\n\nPer analizzare il file pcap, \u00e8 consigliato utilizzare un tool come [Wireshark](https://www.wireshark.org/download.html).",
+  "authors": [
+    "Giulia Martino <@Giulia>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 21,
+  "flags": [
+    "^ITASEC\\{l3ts_f0llow_th3_flow_and_the_fl4g_will_sh0w_up\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "client.pcap",
+      "type": "upload",
+      "path": "./attachments/client.pcap",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

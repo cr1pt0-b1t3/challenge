@@ -1,0 +1,26 @@
+services:
+  client:
+    image: python:3.11
+    restart: no
+    command: [ 'python3', '/client.py', 'server', '6969' ]
+    volumes:
+      - ./client.py:/client.py:ro
+    depends_on:
+      - server
+
+  server:
+    image: python:3.11
+    restart: no
+    command: [ 'python3', '/server.py', '6969' ]
+    volumes:
+      - ./server.py:/server.py:ro
+
+  tcpdump:
+    image: nicolaka/netshoot
+    restart: no
+    network_mode: service:client
+    command: [ 'tcpdump' ,'-i' ,'eth0' ,'-w', '/data/traffic.pcap' , 'port 6969' ]
+    volumes:
+      - ./data:/data
+    depends_on:
+      - client

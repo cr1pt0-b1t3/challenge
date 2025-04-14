@@ -1,0 +1,33 @@
+{
+  "title": "XOR temporale",
+  "description": "Vorrei trovare una buona descrizione per questa challenge, ma non ne ho il tempo\n\nSito: [http://xortemporale.challs.olicyber.it](http://xortemporale.challs.olicyber.it)",
+  "authors": [
+    "Matteo Rossi <@mr96>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 34,
+  "flags": [
+    "^ITASEC\\{m4yb3_60_k3y5_4r3_n07_3n0u6h\\.\\.\\.\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://xortemporale.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

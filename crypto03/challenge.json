@@ -1,0 +1,33 @@
+{
+  "title": "XOR minimale",
+  "description": "Chi ha detto che una chiave dev'essere lunga per non essere ripetuta?\n\nSito: [http://xorminimale.challs.olicyber.it](http://xorminimale.challs.olicyber.it)",
+  "authors": [
+    "Matteo Rossi <@mr96>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 33,
+  "flags": [
+    "^ITASEC\\{0n3_by73_m4yb3_15_700_l4zy_f0r_4_k3y\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://xorminimale.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

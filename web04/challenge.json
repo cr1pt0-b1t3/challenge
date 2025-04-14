@@ -1,0 +1,33 @@
+{
+  "title": "QuickNote",
+  "description": "Prendi appunti in modo rapido, semplice e ovunque tu sia su QuickNote. Riuscirai a leggere la nota di `admin`?\n\nSito: [http://quicknote.challs.olicyber.it](http://quicknote.challs.olicyber.it)",
+  "authors": [
+    "Gianluca Altomani <@devgianlu>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 44,
+  "flags": [
+    "^ITASEC\\{c00ki3s_c4n_b3_ch4ng3d_f0r_big_r3w4rds\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://quicknote.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

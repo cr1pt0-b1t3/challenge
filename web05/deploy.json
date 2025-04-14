@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "services": {
+    "app": {
+      "build": "src",
+      "expose": [
+        {
+          "type": "http",
+          "container": 3000,
+          "hostname": "dividifacile.challs.olicyber.it",
+          "secure": false
+        }
+      ],
+      "environment": {
+        "FLAG": "ITASEC{j4v4scr1pt_do35_s0m3_5tup1d_5tuff}"
+      }
+    }
+  }
+}

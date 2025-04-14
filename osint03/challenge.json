@@ -1,0 +1,26 @@
+{
+  "title": "Ricerca o ricerche?",
+  "description": "Come si chiamata la venue che ha ospitato l'edition 2019 di [ITASEC](https://itasec.it/)?\n\nRiesci a *ricercare* questa informazione?\n\nLa flag \u00e8 nel formato: `ITASEC{Nome della Struttura Ospitante}`",
+  "authors": [
+    "Gaspare Ferraro <@Gaspare>"
+  ],
+  "tags": [
+    "osint"
+  ],
+  "hiddenTags": [],
+  "order": 13,
+  "flags": [
+    "^ITASEC\\{Consiglio Nazionale delle Ricerche\\}$",
+    "^ITASEC\\{consiglio nazionale delle ricerche\\}$",
+    "^ITASEC\\{ConsiglioNazionaledelleRicerche\\}$",
+    "^ITASEC\\{consiglionazionaledellericerche\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": []
+}

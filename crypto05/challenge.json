@@ -1,0 +1,33 @@
+{
+  "title": "Passwordless Login",
+  "description": "Nulla da vedere qui, solo un classico sistema di login che non serve assolutamente a nulla in pieno stile CTF :)\n\nSito: [http://passwordlesslogin.challs.olicyber.it](http://passwordlesslogin.challs.olicyber.it)",
+  "authors": [
+    "Matteo Rossi <@mr96>"
+  ],
+  "tags": [
+    "crypto"
+  ],
+  "hiddenTags": [],
+  "order": 35,
+  "flags": [
+    "^ITASEC\\{ECB_cu7_4nd_p4573_n3v3r_6375_0ld\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://passwordlesslogin.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

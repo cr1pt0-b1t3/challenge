@@ -1,0 +1,30 @@
+{
+  "title": "I commenti",
+  "description": "Ci sono un sacco di pacchetti qui. Ma ti ho lasciato dei commenti...",
+  "authors": [
+    "Giulia Martino <@Giulia>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 22,
+  "flags": [
+    "^ITASEC\\{alw4ys_ch3ck_th3_comm3nts_!!!\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "traffic.pcapng",
+      "type": "upload",
+      "path": "./attachments/traffic.pcapng",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

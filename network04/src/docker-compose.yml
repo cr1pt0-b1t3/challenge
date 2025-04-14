@@ -1,0 +1,31 @@
+services:
+  # client:
+  #   build: .
+  #   restart: no
+  #   command: [ 'python3', '/client.py', 'server', '80' ]
+  #   volumes:
+  #     - ./client.py:/client.py:ro
+  #   depends_on:
+  #     - server
+
+  server:
+    build: .
+    restart: no
+    command: [ 'python3', '/server.py', '80' ]
+    volumes:
+      - ./server.py:/server.py:ro
+      - ./templates:/templates:ro
+    ports:
+      - 80:80
+    environment:
+      - 'FLAG=ITASEC{step1_step2_step3_step4_and_flag}'
+
+  # tcpdump:
+  #   image: nicolaka/netshoot
+  #   restart: no
+  #   network_mode: service:client
+  #   command: [ 'tcpdump' ,'-i' ,'eth0' ,'-w', '/data/traffic.pcap' , 'port 80' ]
+  #   volumes:
+  #     - ./data:/data
+  #   depends_on:
+  #     - client  

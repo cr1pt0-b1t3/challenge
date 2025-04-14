@@ -1,0 +1,37 @@
+{
+  "title": "Una pizza da urlo!",
+  "description": "L'altra sera dei miei amici durante ITASEC24 mi hanno consigliato una pizzeria qua in zona a Salerno veramente da urlo, guarda che foto mi hanno mandato!\n\nTra poco devo andare a cena, ma non mi hanno detto ne il nome della pizzeria ne della pizza, solo un paio di foto. Puoi aiutarmi a trovare il posto e il nome della pizza?\n\nLa flag \u00e8 nel formato: `ITASEC{Nomepizza}`",
+  "authors": [
+    "Gaspare Ferraro <@Gaspare>"
+  ],
+  "tags": [
+    "osint"
+  ],
+  "hiddenTags": [],
+  "order": 14,
+  "flags": [
+    "^ITASEC\\{Granammare\\}$",
+    "^ITASEC\\{granammare\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "maps.jpg",
+      "type": "upload",
+      "path": "./attachments/maps.jpg",
+      "dynamic": false
+    },
+    {
+      "name": "pizza.jpeg",
+      "type": "upload",
+      "path": "./attachments/pizza.jpeg",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

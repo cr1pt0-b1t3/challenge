@@ -1,0 +1,1 @@
+Prova a modificare il cookie `user` e vedere cosa succede

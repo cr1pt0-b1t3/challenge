@@ -1,0 +1,117 @@
+<html lang="it">
+<head>
+    <title>SecretCheckAI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: "Tilt Neon", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.3rem;
+        }
+
+        .boxes {
+            padding-top: 1rem;
+        }
+
+        .boxes > div {
+            list-style-type: none;
+            background: green;
+            border-radius: 1rem;
+            box-shadow: violet 10px 10px;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .final-box {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: violet;
+            box-shadow: green 10px 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .final-box > input {
+            font-size: 2rem;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 2px 2px black;
+        }
+        .final-box > button {
+            font-size: 2rem;
+            border: none;
+            background-color: lightgray;
+            border-radius: 5px;
+            box-shadow: 2px 2px green;
+        }
+        .final-box > button:hover {
+            transition: all 200ms;
+            background-color: darkgray;
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body style="padding: 1rem">
+
+<div style="text-align: center; padding: 0 5rem 0 5rem">
+    <h1>Benvenuti su SecretCheckAI</h1>
+
+    <h4>SecretCheckAI è la tua risorsa online per scoprire se una frase è un segreto con l'aiuto dell'intelligenza
+        artificiale! Hai mai avuto il dubbio che una frase potesse nascondere un significato nascosto o un messaggio
+        criptato? Ora puoi scoprirlo in modo rapido e affidabile.</h4>
+</div>
+
+<div class="boxes">
+    <div><b>Come Funziona</b>: Inserisci la tua frase nel nostro strumento di analisi e lascia che la potenza
+        dell'intelligenza artificiale la esamini alla ricerca di segnali che possano indicare la presenza di un segreto.
+        Il nostro algoritmo avanzato analizzerà la struttura della frase, il suo contenuto e altri elementi per rivelare
+        eventuali indizi di criptazione o intenzioni nascoste.
+    </div>
+
+    <div><b>Affidabile e Sicuro</b>: La tua privacy è al centro di tutto ciò che facciamo. Utilizziamo solo algoritmi e
+        tecniche di intelligenza artificiale sicure e rispettiamo rigorosamente le normative sulla privacy. Puoi essere
+        certo che le tue frasi saranno analizzate in modo confidenziale e sicuro.
+    </div>
+
+    <div><b>Risultati Chiari e Facili da Interpretare</b>: Una volta completata l'analisi, ti forniremo un resoconto
+        chiaro e dettagliato dei risultati. Se la tua frase contiene un segreto o un messaggio nascosto, ti forniremo
+        informazioni utili per comprendere il suo significato e interpretarlo correttamente.
+    </div>
+
+    <div><b>Esplora e Scopri</b>: Anche se non sei sicuro se una frase contiene un segreto, sentiti libero di esplorare
+        il nostro sito per informarti su tecniche di crittografia, steganografia e altri concetti correlati. La
+        conoscenza è la chiave per scoprire il potenziale segreto di ogni frase!
+    </div>
+</div>
+
+<div class="final-box">
+    <h3>Non perdere altro tempo a chiederti se c'è qualcosa di nascosto nelle tue frasi.
+        Metti alla prova SecretCheckAI e scopri i segreti che potrebbero essere svelati:</h3>
+    <input type="text" id="secret"/>
+    <button onclick="checkSecret(window.secret.value);">
+        Controlla ora
+    </button>
+</div>
+
+<script>
+    const data = atob('{{ data }}')
+
+    function checkSecret(value) {
+        for (let i = 0, j = data.length - 1, k = false; j - i >= 0; k = k ? (i++, false) : (j--, true)) {
+            if (value[k ? i : j] !== data[j - i]) {
+                alert('Questo non è un segreto...')
+                return
+            }
+        }
+
+        alert('Hai trovato proprio un bel segreto!')
+    }
+</script>
+</body>
+</html>

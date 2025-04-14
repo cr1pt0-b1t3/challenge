@@ -1,0 +1,38 @@
+{
+  "enabled": true,
+  "services": {
+    "app": {
+      "build": "src",
+      "command": [
+        "python3",
+        "/server.py",
+        "80"
+      ],
+      "volumes": [
+        {
+          "type": "bind",
+          "host": "src/server.py",
+          "container": "/server.py",
+          "readonly": true
+        },
+        {
+          "type": "bind",
+          "host": "src/templates",
+          "container": "/templates",
+          "readonly": true
+        }
+      ],
+      "environment": {
+        "FLAG": "ITASEC{step1_step2_step3_step4_and_flag}"
+      },
+      "expose": [
+        {
+          "type": "http",
+          "container": 80,
+          "hostname": "lemosse.challs.olicyber.it",
+          "secure": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "VectorCraft",
+  "description": "Benvenuto su VectorCraft: il tuo portale di riferimento per grafiche vettoriali di qualit\u00e0 e ispirazione creativa.\n\nSito: [http://vectorcraft.challs.olicyber.it](http://vectorcraft.challs.olicyber.it)",
+  "authors": [
+    "Gianluca Altomani <@devgianlu>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 41,
+  "flags": [
+    "^ITASEC\\{y0u_c4n_f1nd_t3xt_wh3r3_y0u_l3ast_3xp3ct_1t\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://vectorcraft.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

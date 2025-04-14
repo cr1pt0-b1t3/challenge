@@ -1,0 +1,40 @@
+{
+  "title": "DividiFacile",
+  "description": "DividiFacile: la soluzione online per suddividere le spese senza stress, in modo rapido e preciso.\n\nSito: [http://dividifacile.challs.olicyber.it](http://dividifacile.challs.olicyber.it)",
+  "authors": [
+    "Gianluca Altomani <@devgianlu>"
+  ],
+  "tags": [
+    "web"
+  ],
+  "hiddenTags": [],
+  "order": 45,
+  "flags": [
+    "^ITASEC\\{j4v4scr1pt_do35_s0m3_5tup1d_5tuff\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "index.js",
+      "type": "upload",
+      "path": "./attachments/index.js",
+      "dynamic": false
+    }
+  ],
+  "hints": [],
+  "endpoint": {
+    "type": "http",
+    "url": "http://dividifacile.challs.olicyber.it:80/"
+  },
+  "checker": {
+    "enabled": true,
+    "config": {
+      "timeout": 10
+    }
+  }
+}

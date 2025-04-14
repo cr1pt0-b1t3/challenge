@@ -1,0 +1,1 @@
+HTTP3 utilizza TLS, quindi tutti i pacchetti sono cifrati. Ma il file di segreti che hai in allegato è la soluzione.

@@ -1,0 +1,7 @@
+services:
+  web05:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      FLAG: ITASEC{j4v4scr1pt_do35_s0m3_5tup1d_5tuff}

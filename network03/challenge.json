@@ -1,0 +1,30 @@
+{
+  "title": "Segreti nascosti",
+  "description": "Credo ci sia un file contenente segreti nascosti qua dentro. Puoi _estrarlo_ per me?",
+  "authors": [
+    "Giulia Martino <@Giulia>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 23,
+  "flags": [
+    "^ITASEC\\{exp0rt_pack3t_byt3s_is_th3_way\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "traffic.pcap",
+      "type": "upload",
+      "path": "./attachments/traffic.pcap",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}

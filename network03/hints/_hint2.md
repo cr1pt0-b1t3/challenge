@@ -1,0 +1,1 @@
+Ispeziona la richiesta POST ad /upload che avuto successo, ed estrai i byte del file spedito.

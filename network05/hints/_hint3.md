@@ -1,0 +1,1 @@
+Non sempre le informazioni interessanti sono nel _body_ delle richieste HTTP. C'è anche altro!

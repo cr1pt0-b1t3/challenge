@@ -1,0 +1,1 @@
+In quali blocchi va a finire il nome dell'utente?

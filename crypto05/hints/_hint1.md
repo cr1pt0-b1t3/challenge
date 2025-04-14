@@ -1,0 +1,1 @@
+Hai letto come funziona la [modalità ECB](https://it.wikipedia.org/wiki/Electronic_code_book)?

@@ -1,0 +1,1 @@
+Hai provato a leggere [la sezione](https://en.wikipedia.org/wiki/Secret_sharing_using_the_Chinese_remainder_theorem) sugli schemi di secret sharing che utilizzano il teorema cinese del resto?

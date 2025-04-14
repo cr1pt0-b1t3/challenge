@@ -1,0 +1,36 @@
+{
+  "title": "Il futuro",
+  "description": "HTTP3 \u00e8 il futuro. E quindi \u00e8 meglio iniziare ad allenarsi. E' tutto illeggibile dentro questo pcap, ma credo ci sia un modo per decifrare il contenuto!\n\nPer risolvere questa challenge \u00e8 consigliato scaricare l'ultima versione di Wireshark. Versioni troppo datate potrebbero rendere pi\u00f9 difficile la risoluzione.",
+  "authors": [
+    "Giulia Martino <@Giulia>"
+  ],
+  "tags": [
+    "network"
+  ],
+  "hiddenTags": [],
+  "order": 25,
+  "flags": [
+    "^ITASEC\\{H3LL0_HTTp3_3v3ry0n3\\}$"
+  ],
+  "scoring": {
+    "type": "dynamic",
+    "start": 500,
+    "stop": 50,
+    "decay": "50%"
+  },
+  "files": [
+    {
+      "name": "secrets-log",
+      "type": "upload",
+      "path": "./attachments/secrets-log",
+      "dynamic": false
+    },
+    {
+      "name": "traffic.pcap",
+      "type": "upload",
+      "path": "./attachments/traffic.pcap",
+      "dynamic": false
+    }
+  ],
+  "hints": []
+}
